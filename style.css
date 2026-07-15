@@ -737,6 +737,36 @@ body > * {
     font-size: 0.9rem;
 }
 
+/* ==========================================
+   NEW EASTER EGG STYLES (Easier Discoverability)
+   ========================================== */
+
+#whoami-egg,
+#violin-egg {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#whoami-egg:hover {
+    color: var(--accent-green);
+    text-shadow: 0 0 12px var(--accent-green);
+    text-decoration: underline dotted;
+}
+
+#violin-egg:hover {
+    color: var(--accent-purple) !important;
+    text-shadow: 0 0 15px var(--accent-purple);
+}
+
+#logo-egg {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#logo-egg:hover {
+    transform: scale(1.05);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .nav-menu {
