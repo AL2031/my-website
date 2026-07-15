@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https:; frame-src 'self' https://colab.research.google.com https://www.youtube.com;">
-    <title>Alex Lin| Normal Human WHo Lives On Earth</title>
+    <title>Alex Lin | Normal Human Who Lives On Earth</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">$ al2031</div>
+            <div class="logo" id="logo-egg" title="Double click me for a surprise!">$ al2031</div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">home</a></li>
                 <li><a href="#about" class="nav-link">about</a></li>
@@ -24,35 +23,33 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="terminal-box">
             <div class="terminal-header">
-                <span class="dot red"></span>
+                <span class="dot red" id="self-destruct" title="DO NOT CLICK"></span>
                 <span class="dot yellow"></span>
                 <span class="dot green"></span>
             </div>
             <div class="terminal-content">
                 <p class="typing">$ whoami</p>
-                <p class="output">>>>  Alex Lin</p>
+                <p class="output">>>> <span id="whoami-egg" title="Click to verify identity">Alex Lin (Click for ID Card)</span></p>
                 <p class="typing">$ cat interests.txt</p>
                 <p class="output">>>> Coding | Training LLMs | YouTuber | Playing Violin</p>
                 <p class="typing">$ cd ~/projects</p>
-                <p class="output">>>> Imagine a very very long list of of acomplishments here</p>
+                <p class="output">>>> Imagine a very very long list of accomplishments here</p>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
             <h2 class="section-title">> about_me.py</h2>
             <div class="code-block">
                 <pre><code>class AboutMe:
     def __init__(self):
-        self.name = "AlexLin"
+        self.name = "Alex Lin"
         self.interests = ["coding", "LLMs", "YouTube", "violin"]
-        self.location = "Somewhereonearth"
+        self.location = "Somewhere on earth"
         self.bio = """
         Imagine a very very very very extremely long bio here (Totally not too lazy)
         """
@@ -62,13 +59,12 @@
             "coding": "Building projects with java python lua html",
             "youtube": "Creating random stuff",
             "violin": "I play violin. What more do you need to know?",
-            "llms": "Training and experimenting with large language models (Given the fact that I'm just using google collab, how large do you think they are)"
+            "llms": "Training and experimenting with large language models (Given the fact that I'm just using google colab, how large do you think they are)"
         }</code></pre>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
             <h2 class="section-title">> ls ~/projects</h2>
@@ -92,13 +88,12 @@
         </div>
     </section>
 
-    <!-- LLM Tutorial Section -->
     <section id="llm-tutorial" class="section">
         <div class="container">
             <h2 class="section-title">> train_your_llm.py</h2>
             <div class="llm-tutorial-box">
                 <h3 class="tutorial-subtitle">Build Your Own Language Model </h3>
-                <p class="tutorial-desc">Make a LLM in google collab all by "yourself"</p>
+                <p class="tutorial-desc">Make an LLM in google colab all by "yourself"</p>
                 
                 <div class="tutorial-content">
                     <h4>What You'll Learn:</h4>
@@ -108,7 +103,7 @@
                 </div>
 
                 <div class="tutorial-highlight">
-                    <p><strong>No coding experience needed (literaly)</strong> Everything runs in your browser with Google Colab's free T4 GPU. (If anyone knows what they do with their old GPU's [...]
+                    <p><strong>No coding experience needed (literally)</strong> Everything runs in your browser with Google Colab's free T4 GPU. (If anyone knows what they do with their old GPUs [...]</p>
                 </div>
 
                 <a href="https://colab.research.google.com/drive/13UkdFvWUMEw0xcZfZo_iFaz88wpf78a1?usp=sharing" class="btn-tutorial" target="_blank">→ Open Tutorial in Colab</a>
@@ -116,7 +111,6 @@
         </div>
     </section>
 
-    <!-- YouTube Section -->
     <section id="youtube" class="section">
         <div class="container">
             <h2 class="section-title">> youtube_channel.sh</h2>
@@ -127,18 +121,16 @@
         </div>
     </section>
 
-    <!-- Violin Section -->
     <section id="violin" class="section">
         <div class="container">
             <h2 class="section-title">> violin.wav</h2>
             <div class="violin-box">
                 <p>Yay, music.</p>
-                <p class="placeholder">Imagine some insanely hard violin music here.</p>
+                <p class="placeholder" id="violin-egg" title="Click me to play synthesizer tune!">Imagine some insanely hard violin music here. (Click to Synthesize Solo 🎻)</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
             <h2 class="section-title">> contact.md</h2>
@@ -153,7 +145,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <p>$ echo "Thanks for visiting!" && exit 0</p>
         <p class="year">© 2026 al2031</p>
