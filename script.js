@@ -293,23 +293,19 @@ const ledgerIframe = document.getElementById('ledger-iframe');
 const closeArcade = document.getElementById('close-arcade');
 const closeLedger = document.getElementById('close-ledger');
 
-// Peak Game Card Event
-if (peakCard && arcadeModal && arcadeIframe) {
+// Optimized Peak Game Card Event (No laggy iframe)
+if (peakCard) {
     peakCard.addEventListener('click', () => {
-        // Trigger alert then populate iframe securely
-        alert("🎮 BOOTING VIRTUAL EMULATOR ENVIRONMENT...\nRunning Peak-Game directly inside your browser container!");
-        arcadeIframe.src = "https://al2031.github.io/Peak-Game/";
-        arcadeModal.style.display = 'flex';
+        alert("🎮 Redirecting to Peak-Game virtual environment...");
+        window.open("https://al2031.github.io/Peak-Game/", "_blank");
     });
 }
 
-// Ledger-Co Card Event
-if (ledgerCard && ledgerModal && ledgerIframe) {
+// Optimized Ledger-Co Card Event (No laggy iframe)
+if (ledgerCard) {
     ledgerCard.addEventListener('click', () => {
-        // Trigger alert then populate iframe securely
-        alert("📊 LINKING SECURE ENCRYPTED LEDGERS...\nSynthesizing connection to Ledger-Co dashboard databases!");
-        ledgerIframe.src = "https://al2031.github.io/Ledger-Co/";
-        ledgerModal.style.display = 'flex';
+        alert("📊 Redirecting to Ledger-Co dashboard...");
+        window.open("https://al2031.github.io/Ledger-Co/", "_blank");
     });
 }
 
