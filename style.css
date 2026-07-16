@@ -18,7 +18,7 @@
 
 /* Animated Background Keyframes */
 @keyframes scanlines {
-    0% {
+    0 {
         transform: translateY(0);
     }
     100% {
@@ -737,8 +737,9 @@ body > * {
     font-size: 0.9rem;
 }
 
+
 /* ==========================================
-   NEW EASTER EGG STYLES (Easier Discoverability)
+   EASTER EGGS (Discoverability and Custom Modals)
    ========================================== */
 
 #whoami-egg,
@@ -767,7 +768,137 @@ body > * {
     transform: scale(1.05);
 }
 
-/* Responsive */
+/* Custom Neon Styles for Secret Game/Ledger cards */
+.project-card.easter-egg-card {
+    border: 2px dashed var(--accent-purple);
+    background: rgba(210, 168, 255, 0.03);
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card.easter-egg-card::after {
+    content: 'SECRET DETECTED';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--accent-purple);
+    color: #000;
+    font-size: 0.65rem;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    animation: flicker 1s infinite alternate;
+}
+
+/* Blue styling variation for Ledger secret card */
+.project-card.easter-egg-card#ledger-egg-card {
+    border-color: var(--accent-blue);
+    background: rgba(88, 166, 255, 0.03);
+}
+
+.project-card.easter-egg-card#ledger-egg-card::after {
+    content: 'DATABASE KEY LINKED';
+    background: var(--accent-blue);
+}
+
+.project-card.easter-egg-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 35px rgba(212, 168, 255, 0.35);
+}
+
+.project-card.easter-egg-card#ledger-egg-card:hover {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 35px rgba(88, 166, 255, 0.35);
+}
+
+/* Full screen Blur overlays */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.modal-content {
+    background: var(--bg-darker);
+    border: 3px solid var(--accent-green);
+    border-radius: 12px;
+    width: 95%;
+    max-width: 1100px;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 60px rgba(63, 185, 80, 0.4);
+    overflow: hidden;
+    animation: glow-pulse 3s infinite;
+}
+
+#ledger-modal .modal-content {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 60px rgba(88, 166, 255, 0.4);
+}
+
+.modal-header {
+    background: linear-gradient(90deg, rgba(48, 54, 61, 0.95), rgba(48, 54, 61, 0.75));
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--accent-green);
+}
+
+#ledger-modal .modal-header {
+    border-bottom-color: var(--accent-blue);
+}
+
+.modal-title {
+    font-weight: bold;
+    color: var(--text-primary);
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+}
+
+.modal-close {
+    background: var(--accent-red);
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    transition: all 0.2s ease-in-out;
+}
+
+.modal-close:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px var(--accent-red);
+}
+
+.modal-body {
+    flex: 1;
+    position: relative;
+    background: #000;
+}
+
+.modal-body iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Responsive fixes */
 @media (max-width: 768px) {
     .nav-menu {
         gap: 1rem;
@@ -795,5 +926,13 @@ body > * {
     
     .section {
         min-height: auto;
+    }
+
+    .modal-overlay {
+        padding: 0.5rem;
+    }
+
+    .modal-content {
+        height: 95vh;
     }
 }
