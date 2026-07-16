@@ -276,3 +276,66 @@ function playViolinSynthesizer() {
         audioCtx.close();
     }, (time - audioCtx.currentTime) * 1000 + 200);
 }
+
+// ==========================================
+// NEW MODAL LAUNCHERS: PEAK GAME & LEDGER-CO
+// ==========================================
+
+const peakCard = document.getElementById('peak-egg-card');
+const ledgerCard = document.getElementById('ledger-egg-card');
+
+const arcadeModal = document.getElementById('arcade-modal');
+const ledgerModal = document.getElementById('ledger-modal');
+
+const arcadeIframe = document.getElementById('arcade-iframe');
+const ledgerIframe = document.getElementById('ledger-iframe');
+
+const closeArcade = document.getElementById('close-arcade');
+const closeLedger = document.getElementById('close-ledger');
+
+// Peak Game Card Event
+if (peakCard && arcadeModal && arcadeIframe) {
+    peakCard.addEventListener('click', () => {
+        // Trigger alert then populate iframe securely
+        alert("🎮 BOOTING VIRTUAL EMULATOR ENVIRONMENT...\nRunning Peak-Game directly inside your browser container!");
+        arcadeIframe.src = "https://al2031.github.io/Peak-Game/";
+        arcadeModal.style.display = 'flex';
+    });
+}
+
+// Ledger-Co Card Event
+if (ledgerCard && ledgerModal && ledgerIframe) {
+    ledgerCard.addEventListener('click', () => {
+        // Trigger alert then populate iframe securely
+        alert("📊 LINKING SECURE ENCRYPTED LEDGERS...\nSynthesizing connection to Ledger-Co dashboard databases!");
+        ledgerIframe.src = "https://al2031.github.io/Ledger-Co/";
+        ledgerModal.style.display = 'flex';
+    });
+}
+
+// Close Actions
+if (closeArcade && arcadeModal && arcadeIframe) {
+    closeArcade.addEventListener('click', () => {
+        arcadeModal.style.display = 'none';
+        arcadeIframe.src = ""; // Flush memory and stop sound running in background
+    });
+}
+
+if (closeLedger && ledgerModal && ledgerIframe) {
+    closeLedger.addEventListener('click', () => {
+        ledgerModal.style.display = 'none';
+        ledgerIframe.src = ""; // Terminate open sessions
+    });
+}
+
+// Close on background overlay clicks
+window.addEventListener('click', (e) => {
+    if (e.target === arcadeModal) {
+        arcadeModal.style.display = 'none';
+        arcadeIframe.src = "";
+    }
+    if (e.target === ledgerModal) {
+        ledgerModal.style.display = 'none';
+        ledgerIframe.src = "";
+    }
+});
