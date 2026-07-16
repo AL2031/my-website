@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https:; frame-src 'self' https://colab.research.google.com https://www.youtube.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https:; frame-src 'self' https://colab.research.google.com https://www.youtube.com https://al2031.github.io;">
     <title>Alex Lin | Normal Human Who Lives On Earth</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -84,6 +84,18 @@
                     <p class="project-desc">My First AI powered website</p>
                     <a href="https://github.com/al2031/code-studio-ai" class="project-link" target="_blank">→ GitHub Repo</a>
                 </div>
+
+                <div class="project-card easter-egg-card" id="peak-egg-card" title="Click to play Peak-Game inside this website!">
+                    <h3 class="project-name">🕹️ SECRET: Peak Game</h3>
+                    <p class="project-desc">Uncapped action. Open the retro terminal interface and play the ultimate flying challenge.</p>
+                    <span class="project-link">→ Play Peak Game</span>
+                </div>
+
+                <div class="project-card easter-egg-card" id="ledger-egg-card" title="Click to access Ledger-Co inside this website!">
+                    <h3 class="project-name">📊 SECRET: Ledger-Co</h3>
+                    <p class="project-desc">Sync core finance registers and unlock secure ledger account systems.</p>
+                    <span class="project-link">→ Access Ledger Terminal</span>
+                </div>
             </div>
         </div>
     </section>
@@ -149,6 +161,30 @@
         <p>$ echo "Thanks for visiting!" && exit 0</p>
         <p class="year">© 2026 al2031</p>
     </footer>
+
+    <div id="arcade-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title">🕹️ Peak-Game Retro Arcade Simulator</span>
+                <button class="modal-close" id="close-arcade">CLOSE [X]</button>
+            </div>
+            <div class="modal-body">
+                <iframe id="arcade-iframe" src="" allow="autoplay" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="ledger-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title">📊 Ledger-Co Integrated Dashboard</span>
+                <button class="modal-close" id="close-ledger">CLOSE [X]</button>
+            </div>
+            <div class="modal-body">
+                <iframe id="ledger-iframe" src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
